@@ -20,16 +20,43 @@ const coursePhases = [
 
 // Write your functions here!
 
+const firstStudent = () => ourCohort[0]
+const sortCohortDesc = () => ourCohort.sort().reverse()
+const shortNames = () => ourCohort.filter(name => name.length < 15)
+//Is it okay to have two arrow functions?
+const cohortSize = () => ourCohort.length
 
+const locateStudent = (name) => ourCohort.find(element => element === name)
 
+// function phaseNames() {
+//     const newArr = coursePhases.map(phase => phase.name)
+//     return newArr;
+// }
 
+const phaseNames = () => coursePhases.map(phase => phase.name)
 
+const cohortPhases = () => coursePhases.filter(languageJs => languageJs.language === 'JavaScript')
 
+// function allTheGabes() {
+//     return ourCohort.filter(name => name.slice(0, "Gabriel".length) === "Gabriel");
+// }
 
+const allTheGabes = () => ourCohort.filter(name => name.slice(0, "Gabriel".length) === "Gabriel");
+
+const studentAndPhase = () => ourCohort.map(name => `${name} is currently in Phase 1!`);
+
+const sortPhasesByName = () => coursePhases.sort(function (a, b) {
+    if (a.name < b.name) {
+        return -1;
+    } else {
+        return 1;
+    }
+  });
 
 // You don't have to change anything below this line
 // These console logs are for you to check your work in the browser console.
 
+console.log(firstStudent())
 console.log(sortCohortDesc())
 console.log(shortNames())
 console.log(cohortSize())
